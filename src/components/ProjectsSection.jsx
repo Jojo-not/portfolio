@@ -1,8 +1,46 @@
 import { Description, Title } from '@radix-ui/react-toast'
-import { ArrowRight, ExternalLink, Github } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github,X } from 'lucide-react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 import React from 'react'
+import { useState } from 'react'
 const projects = [
     {id: 1,
+    title:"Ticketing System",
+    description:"A streamlined support platform that helps teams manage, track, and resolve tickets efficiently. ",
+    image:"/public/projects/ticketing/dashbordtick.png",
+    images:[
+      "/public/projects/ticketing/dashbordtick.png",
+      "/public/projects/ticketing/7.png",
+      "/public/projects/ticketing/4.png",
+      "/public/projects/ticketing/5.png",
+      "/public/projects/ticketing/1.png",
+      "/public/projects/ticketing/qt.png",
+      "/public/projects/ticketing/3.png",
+      "/public/projects/ticketing/8.png",
+      "/public/projects/ticketing/9.png",
+    ],
+    tags:["React. js" ,"TailwindCSS","Laravel"],
+    demoUrl:"#",
+    githubUrl:"https://github.com/Jojo-not/Ticketing" },
+    {id: 2,
+    title:"Vendo Print",
+    description:"A streamlined support platform that helps teams manage, track, and resolve tickets efficiently. ",
+    image:"/public/projects/vendo printer/1.png",
+    images:[
+      "/public/projects/vendo printer/1.png",
+      "/public/projects/vendo printer/2.png",
+      "/public/projects/vendo printer/3.png",
+      "/public/projects/vendo printer/4.png",
+      "/public/projects/vendo printer/5.png"
+    ],
+    tags:["React. js" ,"TailwindCSS","JavaScript"],
+    demoUrl:"https://vendo-print.vercel.app/printer",
+    githubUrl:"https://github.com/Jojo-not/VendoPrint" },
+    {id: 3,
     title:"Ticketing System",
     description:"A streamlined support platform that helps teams manage, track, and resolve tickets efficiently. ",
     image:"",
@@ -13,6 +51,18 @@ const projects = [
 ]
 
 const ProjectsSection = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    setIsModalOpen(false);
+  };
   return (
     <section id='projects' className='py-24 px-4 relative'>
         <div className='container mx-auto max-w-5xl'>
@@ -27,7 +77,7 @@ const ProjectsSection = () => {
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, key) => (
             <div
-              key={key}
+              key={key} onClick={() => openModal(project)}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-48 overflow-hidden">
@@ -40,8 +90,8 @@ const ProjectsSection = () => {
 
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                  {project.tags.map((tag,idx) => (
+                    <span key={idx} className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
                       {tag}
                     </span>
                   ))}
@@ -73,7 +123,7 @@ const ProjectsSection = () => {
 
                 </div>
                 </div>
-                
+ 
             ))}
         </div>
         <div className="text-center mt-12">
@@ -86,6 +136,50 @@ const ProjectsSection = () => {
           </a>
         </div>
         </div>
+
+      {isModalOpen && selectedProject && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+    <div className="bg-white dark:bg-background rounded-lg shadow-lg max-w-3xl w-full relative">
+      {/* Close Button */}
+      <button
+        onClick={closeModal}
+        className="absolute top-4 right-4 text-gray-500 hover:text-red-500 z-50"
+      >
+        <X size={24} />
+      </button>
+
+      {/* Swiper with Navigation */}
+      <Swiper
+        modules={[Navigation]}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
+        spaceBetween={10}
+        slidesPerView={1}
+        loop
+        className="rounded-t-lg max-h-[500px] w-full"
+      >
+        {selectedProject.images?.map((img, idx) => (
+          <SwiperSlide key={idx}>
+            <img
+              src={img}
+              alt={`Slide ${idx + 1}`}
+              className="w-full h-[400px] object-cover rounded-t-lg"
+            />
+          </SwiperSlide>
+        ))}
+
+        {/* Prev / Next Buttons */}
+        <button className="swiper-button-prev absolute top-1/2 left-4 z-20 transform -translate-y-1/2 bg-transparent rounded-full p-2 hover:text-black transition">
+        </button>
+        <button className="swiper-button-next absolute top-1/2 right-4 z-30 transform -translate-y-1/2 bg-transparent rounded-full p-2 hover:text-black transition">
+
+        </button>
+      </Swiper>
+    </div>
+  </div>
+)}
     </section>
   )
 }

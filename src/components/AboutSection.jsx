@@ -33,7 +33,7 @@ function AboutSection() {
                 {""}
                 Get In Touch
               </a>
-              <a href="" className='px-5 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 '>
+              <a href="/public/Diez, Jowen Miguel L. CV.pdf" download className='px-5 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 '>
                 DownLoad CV
               </a>
             </div>
