@@ -1,4 +1,5 @@
 import React from 'react'
+import emailjs from '@emailjs/browser';
 import {
   Instagram,
   Linkedin,
@@ -13,14 +14,17 @@ import {
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { useRef } from 'react';
 
 const ContactSection = () => {
+  const form = useRef();
 
     const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    emailjs.sendForm("service_0ndnwg2", "template_mqjdcxe", form.current,"qXSVrFAtpAC3t3rc7")
 
     setIsSubmitting(true);
 
@@ -109,11 +113,11 @@ const ContactSection = () => {
 
           <div
             className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
+            
           >
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} ref={form} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
