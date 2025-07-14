@@ -28,7 +28,7 @@ const projects = [
     githubUrl:"https://github.com/Jojo-not/Ticketing" },
     {id: 2,
     title:"Vendo Print",
-    description:"A streamlined support platform that helps teams manage, track, and resolve tickets efficiently. ",
+    description:"It’s fast, convenient, and perfect for schools, libraries, and public areas where on-demand printing is needed",
     image:"/public/projects/vendo printer/1.png",
     images:[
       "/public/projects/vendo printer/1.png",
@@ -41,12 +41,17 @@ const projects = [
     demoUrl:"https://vendo-print.vercel.app/printer",
     githubUrl:"https://github.com/Jojo-not/VendoPrint" },
     {id: 3,
-    title:"Ticketing System",
-    description:"A streamlined support platform that helps teams manage, track, and resolve tickets efficiently. ",
-    image:"",
-    tags:["React. js" ,"TailwindCSS","Laravel"],
-    demoUrl:"#",
-    githubUrl:"https://github.com/Jojo-not/Ticketing" },
+    title:"Project Zomboid",
+    description:"Project Zomboid is the ultimate zombie survival RPG. Scavenge, build, craft, fight, farm, and survive as long as you can in a post-apocalyptic world. ",
+    image:"/public/projects/PZ/1.png",
+    images:[
+      "/public/projects/PZ/1.png",
+      "/public/projects/PZ/2.png",
+      "/public/projects/PZ/3.png",
+    ],
+    tags:["HTML" ,"Bootstrap","CSS"],
+    demoUrl:"https://jojo-not.github.io/PZ/",
+    githubUrl:"https://github.com/Jojo-not/PZ" },
     
 ]
 
@@ -77,10 +82,10 @@ const ProjectsSection = () => {
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, key) => (
             <div
-              key={key} onClick={() => openModal(project)}
+              key={key} 
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
-              <div className="h-48 overflow-hidden">
+              <div onClick={() => openModal(project)} className="h-48 overflow-hidden cursor-pointer">
                 <img
                   src={project.image}
                   alt={project.title}
