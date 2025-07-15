@@ -170,7 +170,7 @@ const ProjectsSection = () => {
             <img
               src={img}
               alt={`Slide ${idx + 1}`}
-              className="w-full h-[400px] object-cover rounded-t-lg"
+              className="w-full h-full object-cover rounded-t-lg"
             />
           </SwiperSlide>
         ))}
