@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import ThemeToggle from '../components/ThemeToggle'
 import StartBackgound from '../components/StartBackgound'
 import NavBar from '../components/NavBar'
 import HeroSection from '../components/HeroSection'
