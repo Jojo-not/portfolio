@@ -11,9 +11,9 @@ const projects = [
     {id: 1,
     title:"Ticketing System",
     description:"A streamlined support platform that helps teams manage, track, and resolve tickets efficiently. ",
-    image:"/public/projects/ticketing/dashbordtick.png",
+    image:"/projects/ticketing/dashbordtick.png",
     images:[
-      "/public/projects/ticketing/dashbordtick.png",
+      "/projects/ticketing/dashbordtick.png",
       "/public/projects/ticketing/7.png",
       "/public/projects/ticketing/4.png",
       "/public/projects/ticketing/5.png",
