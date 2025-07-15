@@ -3,7 +3,7 @@ import Home from "./page/Home"
 import NotFound from "./page/NotFound"
 import { Toaster } from "@/components/ui/toaster";
 function App() {
-
+  
   return (
     <>
      <Toaster />
