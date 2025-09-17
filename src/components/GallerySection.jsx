@@ -8,14 +8,10 @@ const Gallery = [
       image:"/gallery/achievement/achievement1.png",
       images:[
         "/gallery/achievement/achievement1.png",]},
+
     {id: 2,
-    image:"/projects/vendo printer/1.png",
-    images:[
-      "/projects/vendo printer/1.png",]},
-    {id: 3,
-    image:"/projects/PZ/1.png",
-    images:[
-      "/projects/PZ/1.png",]},
+      image:"/gallery/achievement/placeholder.png",
+      }
 ]
 export const GallerySection = () => {
  const [selectedGallery, setSelectedGallery] = useState(null);

@@ -17,15 +17,13 @@ function AboutSection() {
             </h3>
             <p className='text-muted-foreground'>
               {""}
-              With 2 years of experience in web development, I specialize  
-              in creating responsive, accessible, and performant web  
-              applications using modern technologies.
+              As a new system developer, I am eager to build and optimize reliable solutions while 
+              continuously learning modern technologies to create efficient and user-focused applications.
             </p>
             <p className='text-muted-foreground'>
               {""}
-              I'm a web developer who loves building cool stuff on the web especially
-              the behind-the-scenes magic that makes apps fast and reliable.
-              I’m always learning, always coding.
+              I’m a system developer who loves building reliable solutions, especially the behind-the-scenes 
+              logic that makes applications run smoothly and efficiently. I’m always learning, always coding.
             </p>
 
             <div className='flex flex-col sm:flex-row gap-4 pt-4 justify-center' >
@@ -46,10 +44,9 @@ function AboutSection() {
                   <Code className='h-6 w-6 text-primary'/>
                 </div>
                 <div className='text-left'>
-                  <h4 className='font-semibold text-lg'>Web Development</h4>
+                  <h4 className='font-semibold text-lg'>System Development</h4>
                   <p className='text-muted-foreground'>
-                    Create responsive website and web applications with 
-                    modern framworks.
+                    Crafting seamless and efficient systems with a focus on user experience.
                   </p>
                 </div>
               </div>

@@ -52,6 +52,16 @@ const projects = [
     tags:["HTML" ,"Bootstrap","CSS"],
     demoUrl:"https://jojo-not.github.io/PZ/",
     githubUrl:"https://github.com/Jojo-not/PZ" },
+     {id: 4,
+    title:"Housing Loan Calculator",
+    description:"A simple web application that allows users to calculate their monthly housing loan payments based on the loan amount, interest rate, and loan term.",
+    image:"/projects/Loan/housingloan.png",
+    images:[
+      '/projects/Loan/housingloan.png'
+    ],
+    tags:["React. js" ,"TailwindCSS","JavaScript"],
+    demoUrl:"https://housing-loan-calculator.netlify.app/",
+    githubUrl:"https://github.com/Jojo-not/PZ" },
     
 ]
 
