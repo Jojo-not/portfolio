@@ -7,6 +7,7 @@ import ProjectsSection from '../components/ProjectsSection'
 import ContactSection from '../components/ContactSection'
 import { Footer } from '../components/Footer'
 import { GallerySection } from '../components/GallerySection'
+import { ThemeToggel } from '../components/ThemeToggel'
 
 const Home = () => {
 useEffect(() => {
@@ -18,6 +19,7 @@ useEffect(() => {
   return (
     <div className='min-h-screen bg-background text-foreground overflow-x-hidden'>
         <StartBackgound/>
+        <ThemeToggel/>
         <NavBar/>
         <main>
           <HeroSection/>
